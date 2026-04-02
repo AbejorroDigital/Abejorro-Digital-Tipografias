@@ -56,9 +56,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="p-6 border-b border-app-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
+            <header className="p-6 border-b border-app-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
         <div>
-          <h1 className="text-3xl md:text-4xl font-bold">Abejorro Digital</h1>
+          <a href="https://abejorro-digital.rf.gd" class="back-home-link" title="Volver a la página principal"> <img src="https://abejorro-digital.rf.gd/wp-content/uploads/2026/03/LOGOTIPO-ABEJORRO-DIGITAL-amarillo.png" alt="Abejorro Digital Logo" class="back-home-logo">
+            <h1 className="text-3xl md:text-4xl font-bold">Abejorro Digital</h1></a>
           <h2 className="text-xl md:text-2xl mt-1 opacity-90">Tipografía</h2>
         </div>
         <div className="flex items-center gap-2">
