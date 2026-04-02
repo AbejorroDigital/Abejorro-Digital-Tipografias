@@ -1,7 +1,5 @@
 # Abejorro Digital: Tipografía
 
-![Abejorro Digital Banner](https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6)
-
 **Abejorro Digital: Tipografía** es una aplicación web interactiva desarrollada para la visualización y exploración de fuentes tipográficas de Google Fonts en tiempo real. Constituye una herramienta ideal para diseñadores y desarrolladores que necesitan comparar cómo luce un texto o frase específica en distintas tipografías antes de implementarlas en sus proyectos.
 
 ## ✨ Características Principales
