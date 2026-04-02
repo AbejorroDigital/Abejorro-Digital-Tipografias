@@ -56,10 +56,32 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-            <header className="p-6 border-b border-app-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div>
-          <h1 className="text-3xl md:text-4xl font-bold">Abejorro Digital</h1>
-          <h2 className="text-xl md:text-2xl mt-1 opacity-90">Tipografía</h2>
+      <header className="p-6 border-b border-app-primary/20 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+          <a href="https://abejorro-digital.rf.gd" target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
+            <img 
+              width="512" 
+              height="512" 
+              src="https://abejorro-digital.rf.gd/wp-content/uploads/2026/03/LOGOTIPO-ABEJORRO-DIGITAL-amarillo.png" 
+              className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-105 transition-transform drop-shadow-md" 
+              alt="Logo Abejorro Digital" 
+              decoding="async" 
+              fetchPriority="high" 
+              srcSet="https://abejorro-digital.rf.gd/wp-content/uploads/2026/03/LOGOTIPO-ABEJORRO-DIGITAL-amarillo.png 512w, https://abejorro-digital.rf.gd/wp-content/uploads/2026/03/LOGOTIPO-ABEJORRO-DIGITAL-amarillo-300x300.png 300w, https://abejorro-digital.rf.gd/wp-content/uploads/2026/03/LOGOTIPO-ABEJORRO-DIGITAL-amarillo-150x150.png 150w" 
+              sizes="(max-width: 512px) 100vw, 512px" 
+            />
+          </a>
+          <div>
+            <a 
+              href="https://abejorro-digital.rf.gd" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-app-primary transition-colors inline-block"
+            >
+              <h1 className="text-3xl md:text-4xl font-bold">Abejorro Digital</h1>
+            </a>
+            <h2 className="text-xl md:text-2xl mt-1 opacity-90">Tipografía</h2>
+          </div>
         </div>
         <div className="flex items-center gap-2">
           <button
