@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Cinzel Decorative", ui-serif, Georgia, serif;
+
+  --color-app-bg: #121212;
+  --color-app-text: #ffd700;
+  --color-app-primary: #ff8c00;
+  --color-app-legend: #00f5ff;
+  --color-app-btn-text: #121212;
+}
+
+body {
+  background-color: var(--color-app-bg);
+  color: var(--color-app-text);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-app-primary);
+}
+
+a {
+  color: var(--color-app-primary);
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  color: var(--color-app-primary);
+  opacity: 0.8;
+}
+
+button {
+  background-color: var(--color-app-primary);
+  color: var(--color-app-btn-text);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
