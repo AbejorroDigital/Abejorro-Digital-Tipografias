@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Download, Settings, ExternalLink, X } from 'lucide-react';
+import { Download, Settings, ExternalLink, X, Dices } from 'lucide-react';
 import { toPng } from 'html-to-image';
 import { GOOGLE_FONTS, DEFAULT_FONTS } from './fonts';
 
@@ -46,6 +46,14 @@ export default function App() {
     setSelectedFonts(newFonts);
   };
 
+  /**
+   * Selecciona 12 tipografías aleatorias diferentes de la lista disponible.
+   */
+  const handleRandomizeFonts = () => {
+    const shuffled = [...GOOGLE_FONTS].sort(() => 0.5 - Math.random());
+    setSelectedFonts(shuffled.slice(0, 12));
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <header className="p-6 border-b border-app-primary/20 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -53,13 +61,23 @@ export default function App() {
           <h1 className="text-3xl md:text-4xl font-bold">Abejorro Digital</h1>
           <h2 className="text-xl md:text-2xl mt-1 opacity-90">Tipografía</h2>
         </div>
-        <button 
-          onClick={() => setIsConfigOpen(true)}
-          className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-app-primary/90 transition-colors"
-        >
-          <Settings size={20} />
-          <span>Configuración</span>
-        </button>
+        <div className="flex items-center gap-2">
+          <button 
+            onClick={handleRandomizeFonts}
+            className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-app-primary/20 transition-colors"
+            title="Selección aleatoria"
+          >
+            <Dices size={20} />
+            <span className="hidden sm:inline">Aleatorio</span>
+          </button>
+          <button 
+            onClick={() => setIsConfigOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-app-primary/90 transition-colors"
+          >
+            <Settings size={20} />
+            <span>Configuración</span>
+          </button>
+        </div>
       </header>
 
       <main className="flex-grow p-6 max-w-7xl mx-auto w-full flex flex-col gap-8">
