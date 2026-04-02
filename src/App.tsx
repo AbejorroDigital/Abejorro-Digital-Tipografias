@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Download, Settings, ExternalLink, X, Dices } from 'lucide-react';
 import { toPng } from 'html-to-image';
-import { GOOGLE_FONTS, DEFAULT_FONTS } from './fonts';
+import { Dices, Download, ExternalLink, Settings, X } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { DEFAULT_FONTS, GOOGLE_FONTS } from './fonts';
 
 /**
  * Componente principal de la aplicación "Abejorro Digital: Tipografía".
@@ -23,7 +23,7 @@ export default function App() {
   useEffect(() => {
     const fontFamilies = selectedFonts.map(font => font.replace(/ /g, '+'));
     const url = `https://fonts.googleapis.com/css2?${fontFamilies.map(f => `family=${f}:wght@400;700`).join('&')}&display=swap`;
-    
+
     const link = document.createElement('link');
     link.href = url;
     link.rel = 'stylesheet';
@@ -62,7 +62,7 @@ export default function App() {
           <h2 className="text-xl md:text-2xl mt-1 opacity-90">Tipografía</h2>
         </div>
         <div className="flex items-center gap-2">
-          <button 
+          <button
             onClick={handleRandomizeFonts}
             className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-app-primary/20 transition-colors"
             title="Selección aleatoria"
@@ -70,7 +70,7 @@ export default function App() {
             <Dices size={20} />
             <span className="hidden sm:inline">Aleatorio</span>
           </button>
-          <button 
+          <button
             onClick={() => setIsConfigOpen(true)}
             className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-app-primary/90 transition-colors"
           >
@@ -108,14 +108,14 @@ export default function App() {
           <div className="bg-app-bg border border-app-primary/30 rounded-xl p-6 max-w-3xl w-full max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-2xl font-bold">Configurar Tipografías</h3>
-              <button 
+              <button
                 onClick={() => setIsConfigOpen(false)}
                 className="p-2 hover:bg-white/10 rounded-full transition-colors text-app-text bg-transparent"
               >
                 <X size={24} />
               </button>
             </div>
-            
+
             <p className="text-app-legend mb-6">
               Selecciona las 12 tipografías que deseas visualizar.
             </p>
@@ -140,7 +140,7 @@ export default function App() {
             </div>
 
             <div className="mt-8 flex justify-end">
-              <button 
+              <button
                 onClick={() => setIsConfigOpen(false)}
                 className="px-6 py-2 rounded-md"
               >
@@ -174,7 +174,7 @@ const FontCard: React.FC<{ font: string, phrase: string }> = ({ font, phrase }) 
   const handleDownload = async () => {
     if (!cardRef.current) return;
     try {
-      const dataUrl = await toPng(cardRef.current, { 
+      const dataUrl = await toPng(cardRef.current, {
         cacheBust: true,
         backgroundColor: '#121212',
         style: { margin: '0', padding: '24px' }
@@ -193,33 +193,33 @@ const FontCard: React.FC<{ font: string, phrase: string }> = ({ font, phrase }) 
   return (
     <div className="flex flex-col border border-app-primary/20 rounded-lg overflow-hidden bg-black/20 hover:border-app-primary/50 transition-colors">
       {/* The area to be captured as PNG */}
-      <div 
-        ref={cardRef} 
+      <div
+        ref={cardRef}
         className="p-6 flex-grow flex items-center justify-center min-h-[150px] overflow-hidden bg-app-bg"
       >
-        <p 
-          style={{ fontFamily: `"${font}", sans-serif` }} 
+        <p
+          style={{ fontFamily: `"${font}", sans-serif` }}
           className="text-3xl md:text-4xl text-center break-words w-full text-app-text"
         >
           {phrase || 'Escribe algo...'}
         </p>
       </div>
-      
+
       {/* Footer / Controls */}
       <div className="p-4 bg-black/40 border-t border-app-primary/20 flex items-center justify-between gap-4">
         <div className="flex flex-col">
           <span className="font-bold text-lg text-app-primary">{font}</span>
-          <a 
-            href={googleFontsUrl} 
-            target="_blank" 
+          <a
+            href={googleFontsUrl}
+            target="_blank"
             rel="noopener noreferrer"
             className="text-xs flex items-center gap-1 mt-1 w-fit"
           >
             Ver en Google Fonts <ExternalLink size={12} />
           </a>
         </div>
-        
-        <button 
+
+        <button
           onClick={handleDownload}
           title="Descargar como imagen"
           className="p-2 rounded-full hover:bg-app-primary/20 bg-transparent text-app-primary border border-app-primary/50 transition-colors flex-shrink-0"
